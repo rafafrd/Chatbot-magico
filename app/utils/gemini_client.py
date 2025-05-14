@@ -44,14 +44,15 @@ def generate_text(self, prompt):
             raise Exception(f"Erro na requisição: {str(e)}")
 # Solução 100% confiável para encontrar o .env
 def find_env_file():
-    """Busca o arquivo .env em locais possíveis"""
+    """Busca o arquivo .env em locais possíveis, incluindo ../../env/.env"""
     possible_locations = [
-        # Tentativa 1: Pasta env/ na raiz do projeto
+        # Caminho específico que você mencionou (dois níveis acima)
         Path(__file__).resolve().parent.parent.parent / "env" / ".env",
-        # Tentativa 2: Pasta env/ no mesmo diretório do script
+        # Outros locais comuns
         Path(__file__).resolve().parent / "env" / ".env",
-        # Tentativa 3: Diretório atual de trabalho
         Path.cwd() / "env" / ".env",
+        Path(__file__).resolve().parent / ".env",
+        Path.cwd() / ".env",
     ]
     
     for location in possible_locations:
@@ -59,11 +60,11 @@ def find_env_file():
             print(f"Arquivo .env encontrado em: {location}")
             return location
     
-    # Se não encontrou, mostra todos os locais verificados
-    error_msg = "Arquivo .env não encontrado. Verifique estas localizações:\n"
-    error_msg += "\n".join(f"- {loc}" for loc in possible_locations)
-    error_msg += "\n\nCrie a pasta 'env' e dentro dela o arquivo '.env' com GEMINI_API_KEY=sua_chave"
-    raise FileNotFoundError(error_msg)
+    raise FileNotFoundError(
+        "Arquivo .env não encontrado. Verifique se ele existe em:\n"
+        f"- {Path(__file__).resolve().parent.parent.parent / 'env' / '.env'}\n"
+        "Ou crie o arquivo em um dos locais acima com GEMINI_API_KEY=sua_chave"
+    )
 
 # Carrega o arquivo .env
 ENV_PATH = find_env_file()
