@@ -1,6 +1,6 @@
 # Help.IA Assistant 🤖
 
-O Help.IA é um assistente virtual inteligente desenvolvido com tecnologia de ponta em IA para proporcionar interações naturais e úteis. [Acesse agora](https://chatbot-rapido-kk8zgj8aeq5ndg3kfjiesa.streamlit.app/) e experimente!
+O Help.IA é um assistente virtual inteligente desenvolvido com tecnologia de ponta em IA para proporcionar interações naturais e úteis. Entre agora e experimente!
 
 ## ✨ Funcionalidades
 
@@ -12,7 +12,7 @@ O Help.IA é um assistente virtual inteligente desenvolvido com tecnologia de po
 ## 🚀 Demonstração Ao Vivo
 
 Teste o Help.IA agora mesmo:  
-🔗 [https://chatbot-rapido-kk8zgj8aeq5ndg3kfjiesa.streamlit.app/](https://chatbot-rapido-kk8zgj8aeq5ndg3kfjiesa.streamlit.app/)
+🔗 https://appia-p2chkd6h9x48zxyp6xynma.streamlit.app/
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -22,4 +22,4 @@ Teste o Help.IA agora mesmo:
 - **Gerenciamento de Secrets**: Dotenv (local) / Streamlit Secrets (nuvem)
 ---
 Desenvolvido com ❤️ por rafafrd
-🔗 [Acesse a aplicação](https://chatbot-rapido-kk8zgj8aeq5ndg3kfjiesa.streamlit.app/)
+🔗 https://appia-p2chkd6h9x48zxyp6xynma.streamlit.app/
