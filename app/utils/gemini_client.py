@@ -2,6 +2,30 @@ import os
 import requests
 from dotenv import load_dotenv
 from pathlib import Path
+import streamlit as st  # Adicione esta linha
+
+class GeminiClient:
+    def __init__(self):
+        # Tenta usar Secrets do Streamlit (para produção)
+        try:
+            self.api_key = st.secrets["GEMINI_API_KEY"]
+        except:
+            # Fallback para desenvolvimento local
+            from dotenv import load_dotenv
+            load_dotenv()  # Tenta carregar .env localmente
+            self.api_key = os.getenv("GEMINI_API_KEY")
+            
+        if not self.api_key:
+            raise ValueError(
+                "Chave API não encontrada. Verifique:\n"
+                "1. Secrets do Streamlit (para produção)\n"
+                "2. Arquivo .env (para desenvolvimento local)"
+            )
+        
+        self.base_url = (
+            "https://generativelanguage.googleapis.com/v1beta/models/"
+            "gemini-2.0-flash:generateContent"
+        )
 
 def generate_text(self, prompt):
     try:
@@ -44,12 +68,12 @@ def generate_text(self, prompt):
             raise Exception(f"Erro na requisição: {str(e)}")
 # Solução 100% confiável para encontrar o .env
 def find_env_file():
-    """Busca o arquivo .env em locais possíveis, incluindo ../../env/.env"""
+    """Busca o arquivo .env em locais possíveis, incluindo ../../.env"""
     possible_locations = [
         # Caminho específico que você mencionou (dois níveis acima)
-        Path(__file__).resolve().parent.parent.parent / "env" / ".env",
+        Path(__file__).resolve().parent.parent.parent / ".env",
         # Outros locais comuns
-        Path(__file__).resolve().parent / "env" / ".env",
+        Path(__file__).resolve().parent / ".env",
         Path.cwd() / "env" / ".env",
         Path(__file__).resolve().parent / ".env",
         Path.cwd() / ".env",
@@ -62,7 +86,7 @@ def find_env_file():
     
     raise FileNotFoundError(
         "Arquivo .env não encontrado. Verifique se ele existe em:\n"
-        f"- {Path(__file__).resolve().parent.parent.parent / 'env' / '.env'}\n"
+        f"- {Path(__file__).resolve().parent.parent.parent  / '.env'}\n"
         "Ou crie o arquivo em um dos locais acima com GEMINI_API_KEY=sua_chave"
     )
 
