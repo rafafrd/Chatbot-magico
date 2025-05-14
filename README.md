@@ -1,22 +1,25 @@
-# 🔥 Gemini 2.0 Flash - Chatbot de Alta Velocidade
-> *"O chatbot mais rápido alimentado pela poderosa Gemini API da Google"*
+# Help.IA Assistant 🤖
 
-## 🚀 Visão Geral
-Um chatbot moderno com:
-- **Integração com Gemini 2.0 Flash** (a API mais rápida da Google)
-- **Design futurista** com tema escuro e detalhes vermelhos
-- **Experiência conversacional** fluida e responsiva
+O Help.IA é um assistente virtual inteligente desenvolvido com tecnologia de ponta em IA para proporcionar interações naturais e úteis. [Acesse agora](https://chatbot-rapido-kk8zgj8aeq5ndg3kfjiesa.streamlit.app/) e experimente!
 
-## ✨ Recursos Principais
-| Recurso | Descrição |
-|---------|-----------|
-| ⚡ **Ultra-rápido** | Respostas em tempo real |
-| 🎨 **Interface Moderna** | Tema dark com detalhes vermelhos |
-| 🔒 **Seguro** | Configuração via variáveis de ambiente |
-| 💬 **Histórico** | Mantém o contexto da conversa |
+## ✨ Funcionalidades
 
-## 🛠️ Configuração
-1. Obtenha sua API Key no [Google AI Studio](https://aistudio.google.com)
-2. Crie um arquivo `.env` na pasta `/env`:
-```ini
-GEMINI_API_KEY=sua_chave_aqui
+- **Chat inteligente**: Respostas precisas e contextualizadas
+- **Interface moderna**: Design profissional e responsivo
+- **Configuração simplificada**: Fácil integração com a API Gemini
+- **Experiência limpa**: Interação direta sem elementos desnecessários
+
+## 🚀 Demonstração Ao Vivo
+
+Teste o Help.IA agora mesmo:  
+🔗 [https://chatbot-rapido-kk8zgj8aeq5ndg3kfjiesa.streamlit.app/](https://chatbot-rapido-kk8zgj8aeq5ndg3kfjiesa.streamlit.app/)
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Frontend**: Streamlit (Python)
+- **Backend**: API Gemini da Google
+- **Estilização**: CSS personalizado
+- **Gerenciamento de Secrets**: Dotenv (local) / Streamlit Secrets (nuvem)
+---
+Desenvolvido com ❤️ por rafafrd
+🔗 [Acesse a aplicação](https://chatbot-rapido-kk8zgj8aeq5ndg3kfjiesa.streamlit.app/)
