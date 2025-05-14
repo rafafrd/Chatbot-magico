@@ -167,21 +167,7 @@ def main():
     with chat_container:
         for message in st.session_state.messages:
             with st.chat_message(message["role"]):
-                if message["role"] == "user":
-                    st.markdown(f"<div style='color: #1e293b;'>{message['content']}</div>", unsafe_allow_html=True)
-                else:
-                    st.markdown(f"""
-                    <div style='color: #1e293b; padding-left: 12px;'>
-                        {message['content']}
-                        <div style='margin-top: 8px; font-size: 0.875rem; color: #64748b; 
-                                    display: flex; align-items: center; gap: 4px;'>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 12L11 14L15 10M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                            Help.IA Assistant
-                        </div>
-                    </div>
-                    """, unsafe_allow_html=True)
+                st.markdown(f"<div style='color: #1e293b;'>{message['content']}</div>", unsafe_allow_html=True)
     
     # Input Field
     input_container = st.container()
@@ -208,18 +194,7 @@ def main():
             try:
                 with st.spinner("Processando..."):
                     response = client.generate_text(prompt)
-                    st.markdown(f"""
-                    <div style='color: #1e293b; padding-left: 12px;'>
-                        {response}
-                        <div style='margin-top: 8px; font-size: 0.875rem; color: #64748b; 
-                                    display: flex; align-items: center; gap: 4px;'>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 12L11 14L15 10M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                            Help.IA Assistant
-                        </div>
-                    </div>
-                    """, unsafe_allow_html=True)
+                    st.markdown(f"<div style='color: #1e293b;'>{response}</div>", unsafe_allow_html=True)
                     st.session_state.messages.append({"role": "assistant", "content": response})
             except Exception as e:
                 st.error(f"Erro ao gerar resposta: {str(e)}")
